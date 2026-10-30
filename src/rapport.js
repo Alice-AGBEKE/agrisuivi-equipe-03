@@ -7,6 +7,9 @@ import { alertesIrrigation } from "./irrigation.js";
 import { bilanRecoltes, classerParRevenu } from "./recoltes.js";
 
 // Renvoie les id des alertes qui ont cet état, séparés par ', ', ou 'aucune'.
+<<<<<<< HEAD
+
+=======
 export function listerParEtat(alertes, etat) {
   const alertesFiltrees = alertes.filter(
     alerte => alerte.etat === etat
@@ -20,6 +23,7 @@ export function listerParEtat(alertes, etat) {
     ? identifiants.join(", ")
     : "aucune";
 }
+>>>>>>> 4395f5169add6e1d4a8c29b3ca2261189e94433a
 
 // Renvoie le texte complet du rapport (voir fiches/5-equipe-rapport.md).
 
