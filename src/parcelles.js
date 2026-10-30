@@ -28,5 +28,22 @@ export function surfaceTotale(parcelles) {
 }
 //"TODO Membre 1 : coder surfaceTotale dans src/parcelles.js");
 
+// Renvoie le nombre de parcelles et leur surface par culture.
+export function resumeParCulture(parcelles) {
+    return parcelles.reduce((resume, parcelle) => {
+        if (!resume[parcelle.culture]) {
+            resume[parcelle.culture] = {
+                nombre: 0,
+                surface: 0
+            };
+        }
+
+        resume[parcelle.culture].nombre++;
+        resume[parcelle.culture].surface += parcelle.surface;
+
+        return resume;
+    }, {});
+}
+// "TODO Member 1 : coder resumeParCulture dans src/parcelles.js",
 
 
