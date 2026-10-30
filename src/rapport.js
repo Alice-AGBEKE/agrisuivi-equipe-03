@@ -26,22 +26,28 @@ export function listerParEtat(alertes, etat) {
 export function construireRapport(donnees, date) {
   const { parcelles, cultures, releves, recoltes } = donnees;
 
-  const alertes = alertesIrrigation(parcelles, cultures, releves);
+  // Récupérer les alertes d'irrigation
+  const alertes = alertesIrrigation(parcelles,  releves,cultures);
 
-  const classement = classerParRevenu(recoltes);
+  // Construire le bilan des récoltes
+  const bilan = bilanRecoltes(parcelles, recoltes, cultures);
 
-  const bilan = bilanRecoltes(recoltes);
+  // Classer les parcelles selon leur revenu
+  const classement = classerParRevenu(bilan);
 
-  const productionTotale = recoltes.reduce(
-    (total, recolte) => total + recolte.quantite,
+  // Calculer la production totale
+  const productionTotale = bilan.reduce(
+    (total, ligne) => total + ligne.kg,
     0
   );
 
-  const revenuTotal = recoltes.reduce(
-    (total, recolte) => total + recolte.revenu,
+  // Calculer le revenu total
+  const revenuTotal = bilan.reduce(
+    (total, ligne) => total + ligne.revenu,
     0
   );
 
+  // Récupérer la meilleure parcelle
   const meilleureParcelle = classement[0];
 
   const lignes = [
@@ -57,7 +63,7 @@ export function construireRapport(donnees, date) {
     "--- Récoltes ---",
     `Production totale : ${productionTotale} kg`,
     `Revenu estimé : ${revenuTotal} FCFA`,
-    `Meilleure parcelle : ${meilleureParcelle.id} (${meilleureParcelle.nom}) avec ${meilleureParcelle.revenu} FCFA`
+    `Meilleure parcelle : ${meilleureParcelle.id} (${meilleureParcelle.producteur}) avec ${meilleureParcelle.revenu} FCFA`
   ];
 
   return lignes.join("\n") + "\n";
