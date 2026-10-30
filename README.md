@@ -158,9 +158,9 @@ La date de la première ligne est celle du jour. Le formateur testera aussi votr
 
 ## Notre équipe
 
-| Rôle                  | Prénom et nom | Compte GitHub |
-| --------------------- | ------------- | ------------- |
-| Membre 1 — Parcelles  |               |               |
-| Membre 2 — Irrigation |               |               |
-| Membre 3 — Récoltes   |               |               |
-| Membre 4 — Données    |               |               |
+| Rôle                  | Prénom et nom       |  Compte GitHub 
+| --------------------- | -------------  -----|------------------
+| Membre 1 — Parcelles  |OUEDRAOGO BOURAHIMA  | OUEDRAOGO65280833-lgtm                    
+| Membre 2 — Irrigation |KOUAME MARC          | KOUAMEKOFFIMARCOLIVIER                 
+| Membre 3 — Récoltes   |AGBEKE ALICE         |  Alice-AGBEKE               
+| Membre 4 — Données    |FAKAYODE ABDUL       | FAST225      
