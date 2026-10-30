@@ -14,3 +14,18 @@ export function moyenneHumidite(releves) {
 const somme = releves.reduce((total, releve) => total + releve.humidite, 0);
 return Math.round(somme / releves.length);
 }
+
+// Renvoie 'INCONNU', 'ARROSER', 'DRAINER' ou 'OK'.
+// Les bornes humiditeMin et humiditeMax font partie de la zone 'OK'.
+export function etatIrrigation(humidite, culture) {
+  if (humidite === null || humidite === undefined || !culture){
+    return 'INCONNU';
+  }
+  if (humidite < culture.humiditeMin){
+    return 'ARROSER';
+  }else if (humidite > culture.humiditeMax){
+    return 'DRAINER';
+  }else{
+    return 'OK';
+  }
+}
