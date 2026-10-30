@@ -5,4 +5,3 @@
 export function relevesDeParcelle(releves, idParcelle) {
   return releves.filter(releve => releve.parcelle === idParcelle);
 }
-
