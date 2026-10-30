@@ -73,5 +73,14 @@ if (!parcelle || !String(parcelle).trim()) {
 // Ajoute le relevé à la fin du fichier JSON, enregistre le fichier,
 // puis renvoie le nouveau nombre de relevés.
 export async function ajouterReleve(chemin, releve) {
-  throw new Error("TODO Membre 4 : coder ajouterReleve dans src/donnees.js");
+   const releves = await lireJson(chemin);
+
+  releves.push(releve);
+
+  const texte = JSON.stringify(releves, null, 2);
+
+  await writeFile(chemin, texte, "utf8");
+
+  return releves.length;
 }
+
