@@ -8,4 +8,13 @@
 export function formaterParcelle(parcelle) {
     return `${parcelle.id} | ${parcelle.producteur} | ${parcelle.localite} | ${parcelle.culture} | ${parcelle.surface} ha`;
 }
+// "TODO Membre 1 : coder formaterParcelle dans src/parcelles.js",
+
+// Renvoie la parcelle dont l'id est demandé.
+export function trouverParcelle(parcelles, id) {
+    return parcelles.find((parcelle) => parcelle.id === id);
+}
+ // "TODO Membre 1 : coder trouverParcelle dans src/parcelles.js",
+ 
+
 
