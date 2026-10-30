@@ -1,20 +1,19 @@
 // MEMBRE 1 — Parcelles : chercher, filtrer et additionner des informations.
 // Fiche : fiches/1-parcelles.md · Vérifier : npm run test:parcelles
-
 // Renvoie une ligne de texte qui décrit la parcelle.
 // Exemple : 'P01 | Awa Diallo | Soubré | cacao | 3 ha'
 export function formaterParcelle(parcelle) {
   return `${parcelle.id} | ${parcelle.producteur} | $ {parcelle.localite} | $ {parcelle.culture} | $ {parcelle.surface} ha`;
 } 
   // "TODO Membre 1 : coder formaterParcelle dans src/parcelles.js",
-/*
-// Renvoie la parcelle dont l'id est demandé, ou undefined si elle n'existe pas.
-export function trouverParcelle(parcelles, id) {
-  throw new Error(
-    "TODO Membre 1 : coder trouverParcelle dans src/parcelles.js",
-  );
-}
 
+// / Renvoie la parcelle dont l'id est demandé, ou undefined si elle n'existe pas.
+export function trouverParcelle(parcelles, id) {
+ return parcelles.find((parcelle) => parcelle.id===id)
+   // "TODO Membre 1 : coder trouverParcelle dans src/parcelles.js",
+  
+}
+/*
 // Renvoie un nouveau tableau avec seulement les parcelles de cette culture.
 export function parcellesParCulturc(parcelles, culture) {
   throw new Error(
