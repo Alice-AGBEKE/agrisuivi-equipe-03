@@ -22,4 +22,11 @@ export function parcellesParCulture(parcelles, culture) {
 }
 // "TODO Membre 1 : coder parcellesParCulture dans src/parcelles.js",
 
+// Renvoie la somme des surfaces.
+export function surfaceTotale(parcelles) {
+    return parcelles.reduce((total, parcelle) => total + parcelle.surface, 0);
+}
+//"TODO Membre 1 : coder surfaceTotale dans src/parcelles.js");
+
+
 
