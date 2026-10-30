@@ -15,6 +15,11 @@ export function trouverParcelle(parcelles, id) {
     return parcelles.find((parcelle) => parcelle.id === id);
 }
  // "TODO Membre 1 : coder trouverParcelle dans src/parcelles.js",
- 
+
+ // Renvoie seulement les parcelles de la culture demandée.
+export function parcellesParCulture(parcelles, culture) {
+    return parcelles.filter((parcelle) => parcelle.culture === culture);
+}
+// "TODO Membre 1 : coder parcellesParCulture dans src/parcelles.js",
 
 
